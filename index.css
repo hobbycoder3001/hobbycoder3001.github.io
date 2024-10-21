@@ -1,0 +1,438 @@
+
+
+
+body {
+    background-color: hwb(60 93% 4%);
+    font-family: 'Lato';
+}
+
+header {
+    position: fixed;
+    height: 84px;
+    width: 100vw;
+    top: 0;
+    display: flex;
+    justify-content: center;   /* Center the container horizontally */
+    align-items: center;       /* Align items vertically */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light black shadow */
+    z-index: 10;
+    background-color: WHITE;
+}
+
+
+/* Increase size for h2 and h3 elements */
+h2 {
+    font-size: 2em;              /* Larger font for h2 */
+    text-align: center;          /* Center h2 headings */
+}
+
+h3 {
+    font-size: 1.5em;            /* Larger font for h3 */
+}
+
+/* Additional spacing between headings and content */
+h2, h3 {
+    margin-bottom: 20px;
+}
+
+
+
+.header-container {
+    width: 60%;                /* Take up 60% of the header width */
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;        /* Align items vertically */
+}
+
+.logo {
+    height: 64px;              /* Adjust the logo height if needed */
+}
+
+nav ul {
+    list-style: none;           /* Remove bullet points from list */
+    padding: 0;
+    margin: 0;
+    display: flex;              /* Display links inline */
+}
+
+/* Style the header links to remain black and without underline */
+nav ul li a {
+    text-decoration: none;       /* No underline */
+    color: black;                /* Keep the text color black */
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    color: lightblue;            /* Optional hover effect */
+}
+
+
+nav li {
+    display: inline-block;
+    padding: 0 20px;            /* Add some padding between links */
+    color: black;
+    font-size: 1em;             /* Adjust font size */
+}
+
+
+.logo {
+    height: 2em;              /* Set the height for the logo if needed */
+    vertical-align: middle;    /* Align the logo vertically */
+}
+
+.hero-banner {
+    position: relative;
+    margin-top: 84px;
+    height: 500px;
+    background-image: url("heroPicture3.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;           /* Stack the elements vertically */
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.32);  /* Increased to 32% transparency */
+    z-index: -1;
+}
+
+.hero-banner p {
+    font-size: 1.5em;                 /* Subheading size */
+    margin: 0 0 10px 0;
+}
+
+.hero-banner h1 {
+    font-size: 2.5em;                 /* Main heading size */
+    margin: 10px 0;
+}
+
+/* General CTA Button Styling */
+.cta-button {
+    display: inline-block;
+    background-color: black;         /* Set background to black */
+    color: white;                    /* White text */
+    padding: 15px 30px;              /* Same padding as hero banner */
+    border-radius: 10px;             /* Rounded corners */
+    font-size: 1.3em;                /* Set consistent font size */
+    text-transform: uppercase;       /* Capitalized text */
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;  /* Smooth hover transition */
+}
+
+/* Styling for the link inside the button */
+.cta-button a {
+    color: white;                    /* Ensure the link inside stays white */
+    text-decoration: none;           /* Remove underline from link */
+    display: block;                  /* Ensure the entire button is clickable */
+    width: 100%;                     /* Full width clickable area */
+    height: 100%;                    /* Full height clickable area */
+}
+
+/* Hover effect for the button */
+.cta-button:hover {
+    background-color: #333;          /* Darken button color on hover */
+}
+
+
+
+/* New styles to align content under the hero banner */
+.content-container {
+    padding: 0 40px;           /* Matching padding to align with header */
+    max-width: 1200px;         /* Limit the width to avoid excessive stretching */
+    margin: 0 auto;            /* Center the content */
+}
+
+/* Example styling for sections below the hero banner */
+#services, #team, #portfolio, #kontakt {
+    padding-top: 50px;         /* Add vertical space to the sections */
+    padding-bottom: 50px;
+}
+
+
+/* Style the services section as a visual chain */
+.service {
+    padding: 20px;
+    border-left: 4px solid black;  /* Visual chain effect */
+    margin-bottom: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.service:hover {
+    background-color: lightblue;   /* Hover effect for service items */
+    border-left-color: lightblue;  /* Match border color on hover */
+}
+
+.service h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.service p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+
+/* Reduce margin below the h2 heading */
+#team h2 {
+    margin-bottom: 10px;         /* Decrease space between heading and team section */
+}
+
+/* Team Section for Desktop */
+#team {
+    display: flex;
+    justify-content: space-around;  /* Space the team members evenly */
+    align-items: flex-start;
+    flex-wrap: wrap;                /* Ensure the layout wraps on smaller screens */
+    gap: 30px;                      /* Add spacing between team members */
+}
+
+/* Style for individual team-member divs */
+.team-member {
+    display: flex;
+    flex-direction: column;         /* Stack elements vertically inside each team-member */
+    align-items: center;            /* Center the elements horizontally */
+    text-align: center;
+    width: 45%;                     /* Each team member takes up 45% of the container width */
+    padding: 20px;
+    border: 2px solid black;        /* Optional border to make team blocks more visible */
+    border-radius: 10px;            /* Slight rounding of corners */
+    transition: transform 0.3s ease;/* Add a hover effect to make the blocks interactive */
+}
+
+.team-member:hover {
+    transform: scale(1.05);         /* Slightly enlarge the block on hover */
+}
+
+/* Style the team-member <h3> heading */
+.team-member h3 {
+    margin-bottom: 15px;
+    font-size: 1.8em;               /* Larger font for the name */
+}
+
+/* Make team-member images circular and larger */
+.team-member img {
+    width: 180px;                   /* Increased width for larger image */
+    height: 180px;                  /* Ensure the image remains a square */
+    object-fit: cover;              /* Ensure the image covers the space without stretching */
+    border-radius: 50%;             /* Make the image circular */
+    margin-bottom: 15px;
+}
+
+/* Remove background and center the team-member <p> text */
+.team-member p {
+    background-color: transparent;  /* Remove background */
+    padding: 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-top: 15px;
+    text-align: center;             /* Center the text inside <p> */
+    width: 100%;
+}
+
+/* Center the last paragraph in the team section and increase font size */
+#team > p {
+    text-align: center;             /* Center the last paragraph */
+    font-size: 1.2em;               /* Increase the font size if necessary */
+    margin-top: 20px;               /* Add some spacing above the paragraph */
+    line-height: 1.6;               /* Add better readability with line height */
+}
+
+
+/* Portfolio Section */
+
+/* Center and style h3 headings */
+#portfolio h3 {
+    text-align: center;               /* Center the heading */
+    font-size: 1.8em;                 /* Slightly larger heading */
+    color: #5c5c5c;                   /* Muted, readable gray */
+    margin-bottom: 15px;              /* Space below the heading */
+}
+
+/* Center the paragraphs in the portfolio section */
+#portfolio p {
+    text-align: center;               /* Center the paragraph */
+    font-size: 1.2em;                 /* Same size as the last paragraph in the team section */
+    line-height: 1.6;                 /* Add better readability with line height */
+    margin-bottom: 20px;              /* Space below each paragraph */
+}
+
+/* Add a video frame below the paragraphs */
+.video-frame {
+    width: 100%;                      /* Full width frame */
+    max-width: 800px;                 /* Limit max width for large screens */
+    height: 450px;                    /* Height for video (16:9 ratio) */
+    background-color: #f0f0f0;        /* Light background color for the frame */
+    border: 2px solid #ccc;           /* Light border to frame the video */
+    margin: 0 auto 40px auto;         /* Center the frame and add space below */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-frame::before {
+    content: "Video Placeholder";     /* Placeholder text for the video */
+    color: #aaa;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+
+#kontakt .cta-button {
+    display: inline-block;            /* Ensure the button takes inline-block space */
+    background-color: black;          /* Button background color */
+    color: white;                     /* Text color */
+    padding: 15px 30px;               /* Button padding */
+    border-radius: 10px;              /* Rounded corners */
+    font-size: 1.3em;                 /* Font size */
+    text-transform: uppercase;        /* Capitalized text */
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
+    margin-left: auto;                /* Center horizontally */
+    margin-right: auto;               /* Center horizontally */
+}
+
+/* Ensure the button link is styled correctly */
+#kontakt .cta-button a {
+    color: white;                     /* Ensure the link inside stays white */
+    text-decoration: none;            /* Remove underline from link */
+    display: block;                   /* Make the entire button area clickable */
+    width: 100%;                      /* Full width clickable area */
+    height: 100%;                     /* Full height clickable area */
+}
+
+/* Ensure that the button is within a centered container */
+#kontakt {
+    display: flex;
+    justify-content: center;          /* Horizontally center the content in the contact section */
+    align-items: center;              /* Vertically center the content */
+    flex-direction: column;           /* Stack elements vertically */
+    padding: 50px 0;                  /* Add padding to the contact section */
+}
+
+.cta-button:hover {
+    background-color: #333;           /* Darken button color on hover */
+}
+
+/* Center the iPhone video container and scale it down */
+/* Center the iPhone video container and scale it down */
+.iphone-video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;                      /* Center the container */
+    width: 225px;                           /* Scale down to a width similar to an iPhone */
+    background-color: rgba(0, 0, 0, 0.25);  /* Semi-transparent black border (iPhone-like frame) */
+    border-radius: 30px;                    /* Rounded corners to mimic iPhone design */
+    padding: 10px;                          /* Padding to simulate the iPhone border */
+    height: auto;                           /* Maintain natural height based on aspect ratio */
+}
+
+/* Style the video to fit inside the fake iPhone frame */
+.iphone-video {
+    width: 100%;                            /* Video takes full width inside the container */
+    height: auto;                           /* Maintain the video's natural aspect ratio */
+    object-fit: cover;                      /* Ensure the video covers the entire area */
+    border-radius: 20px;                    /* Slightly rounded corners for the video itself */
+}
+
+/* Store badges styling */
+.store-badges {
+    display: flex;
+    justify-content: center;        /* Center the badges horizontally */
+    align-items: center;            /* Vertically align them to the center */
+    gap: 20px;                      /* Add space between the badges */
+    margin-top: 20px;               /* Space between the video and badges */
+}
+
+/* Badge styling */
+.store-badge {
+    width: 150px;                   /* Set a fixed width for the badges */
+    height: auto;                   /* Maintain the aspect ratio of the badges */
+    cursor: pointer;                /* Change the cursor to pointer when hovering */
+}
+
+.store-badge:hover {
+    opacity: 0.8;                   /* Slight hover effect for the badges */
+}
+
+
+/* Existing styles from index.css */
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-banner h1 {
+        font-size: 1.8em; /* Scale down heading for mobile */
+    }
+
+    .hero-banner p {
+        font-size: 1.2em; /* Scale down subheading for mobile */
+    }
+
+    .cta-button {
+        font-size: 1em; /* Scale down button size */
+        padding: 10px 20px;
+    }
+
+    /* Make the services section stack vertically on smaller screens */
+    #services .service {
+        margin-bottom: 30px;
+    }
+
+    /* Team section */
+    #team .team-member {
+        width: 100%; /* Make team members stack vertically */
+        margin-bottom: 20px;
+    }
+
+    /* Adjust the video container for mobile */
+    .iphone-video-container {
+        width: 100%; /* Full width on mobile */
+        max-width: 300px; /* Limit the width for smaller screens */
+    }
+
+    .store-badges {
+        flex-direction: column; /* Stack badges vertically on mobile */
+        gap: 10px; /* Reduce gap between badges */
+    }
+
+    .store-badge {
+        width: 120px; /* Scale down badge size */
+    }
+}
+
+
+/* Hide the regular navigation on small devices */
+.nav-links {
+    display: none; /* Hide navigation links on small devices */
+}
+
+
+
+
+
+
