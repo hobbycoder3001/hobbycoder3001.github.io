@@ -4,20 +4,22 @@
 body {
     background-color: hwb(60 93% 4%);
     font-family: 'Lato';
+    margin: 0; /* Add this line */
+    padding: 0; /* Add this line */
 }
 
 header {
     position: fixed;
     height: 84px;
-    width: 100vw;
+    width: 100vw; /* Already correct */
     top: 0;
     display: flex;
-    justify-content: center;   /* Center the container horizontally */
-    align-items: center;       /* Align items vertically */
+    justify-content: center;
+    align-items: center;
     padding: 0;
-    margin: 0;
+    margin: 0; /* Add this line to ensure no margin */
     box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light black shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 10;
     background-color: WHITE;
 }
@@ -40,6 +42,16 @@ h2, h3 {
 
 
 
+/* General hover effect for buttons and links */
+.hover-effect {
+    transition: background-color 0.3s ease;  /* Smooth hover transition */
+}
+
+.hover-effect:hover {
+    background-color: #333;  /* Darken color on hover (same as current .cta-button) */
+}
+
+
 .header-container {
     width: 60%;                /* Take up 60% of the header width */
     display: flex;
@@ -58,15 +70,34 @@ nav ul {
     display: flex;              /* Display links inline */
 }
 
-/* Style the header links to remain black and without underline */
+/* Header links hover effect: only change text color */
 nav ul li a {
-    text-decoration: none;       /* No underline */
-    color: black;                /* Keep the text color black */
+    text-decoration: none;
+    color: black;
     padding: 10px 20px;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 nav ul li a:hover {
-    color: lightblue;            /* Optional hover effect */
+    color: #333;  /* Change text color to #333 on hover */
+}
+
+#kontakt .cta-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;  /* Smooth hover transition */
+}
+
+#kontakt .cta-button:hover {
+    background-color: #333; /* Apply hover color */
 }
 
 
@@ -76,7 +107,7 @@ nav li {
     color: black;
     font-size: 1em;             /* Adjust font size */
 }
-
+ 
 
 .logo {
     height: 2em;              /* Set the height for the logo if needed */
@@ -87,16 +118,19 @@ nav li {
     position: relative;
     margin-top: 84px;
     height: 500px;
-    background-image: url("heroPicture3.jpg");
+    background-image: url("heroPicture3.webp");
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;           /* Stack the elements vertically */
+    flex-direction: column;
     text-align: center;
     color: white;
     z-index: 1;
+    padding: 0; /* Add this line to remove any padding */
+    margin: 0; /* Add this line to remove any margin */
+    width: 100vw; /* Make sure the hero banner takes full width */
 }
 
 .hero-banner::after {
@@ -120,7 +154,6 @@ nav li {
     margin: 10px 0;
 }
 
-/* General CTA Button Styling */
 .cta-button {
     display: inline-block;
     background-color: black;         /* Set background to black */
@@ -132,21 +165,19 @@ nav li {
     cursor: pointer;
     margin-top: 20px;
     text-align: center;
-    transition: background-color 0.3s ease;  /* Smooth hover transition */
+    /* Remove the individual hover effect and use the shared class */
 }
 
-/* Styling for the link inside the button */
 .cta-button a {
     color: white;                    /* Ensure the link inside stays white */
     text-decoration: none;           /* Remove underline from link */
-    display: block;                  /* Ensure the entire button is clickable */
-    width: 100%;                     /* Full width clickable area */
-    height: 100%;                    /* Full height clickable area */
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-/* Hover effect for the button */
 .cta-button:hover {
-    background-color: #333;          /* Darken button color on hover */
+    background-color: #333;          /* This hover effect will now be inherited from the shared class */
 }
 
 
