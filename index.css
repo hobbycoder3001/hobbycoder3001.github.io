@@ -217,9 +217,7 @@ nav li {
     margin-top: 99.9vh;
     width: 100vw;
     background: linear-gradient(to bottom, hwb(60 93% 4%), #ffffff);
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    border-top: 8px solid #00bfff;
+    border-top: 1px solid #00bfff;
     box-shadow: 0 -4px 15px 5px rgba(0, 191, 255, 0.8);
     animation: pulseGlow 2s infinite; /* Pulsing glow animation */
 }
