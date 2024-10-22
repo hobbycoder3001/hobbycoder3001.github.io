@@ -1,6 +1,12 @@
 
 
 
+/* Disable horizontal scrolling */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
 body {
     background-color: hwb(60 93% 4%);
     font-family: 'Lato';
