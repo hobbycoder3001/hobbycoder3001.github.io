@@ -433,6 +433,51 @@ footer {
 
 
 
+/* Use the existing hero-banner h1 styling */
+#typed-text {
+    font-size: inherit;  /* Inherits the size from the h1 */
+    font-weight: inherit;  /* Inherits the weight from the h1 */
+    color: inherit;  /* Inherits the color from the h1 */
+}
+
+
+#cursor {
+    font-size: inherit;  /* Inherit the font size from the h1 */
+    font-weight: inherit;  /* Inherit the font weight */
+    color: inherit;  /* Inherit color */
+    display: inline-block;
+    animation: blink 1s infinite;  /* Make the pipe blink */
+}
+
+
+/* Blinking effect for the cursor */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* Blinking effect for the cursor */
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 
 

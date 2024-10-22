@@ -48,7 +48,9 @@
 
     <div class="hero-banner">
         <p>Ganzheitliche Implementierung von App-Projekten</p>
-        <h1>Wir bringen Ihre Idee in den App Store - Vom Konzept bis zum Go-Live.</h1>
+        <h1>
+            <span id="typed-text"></span><span id="cursor">|</span>
+        </h1>
         <div class="cta-button">
             <a href="mailto:maurice.straube96@gmail.com">Projekt anfragen</a>
         </div>
@@ -181,6 +183,24 @@
     
     
 <script>
+
+document.addEventListener('DOMContentLoaded', function() {
+        const text = "Wir bringen Ihre Idee in den App Store - Vom Konzept bis zum Go-Live.";
+        const typingSpeed = 100; // Speed in milliseconds
+        let index = 0;
+        
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById('typed-text').textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, typingSpeed);
+            }
+        }
+
+        typeText();
+    });
+
+
     // Intersection Observer to autoplay video when user scrolls to portfolio section
     document.addEventListener('DOMContentLoaded', function() {
         const portfolioSection = document.querySelector('.portfolio-video');
