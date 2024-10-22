@@ -219,22 +219,6 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
-                const header = document.querySelector('header');
-                let hasScrolled = false; // Track if the user has scrolled once
-
-                window.addEventListener('scroll', function () {
-                    if (!hasScrolled) {
-                        hasScrolled = true; // Mark that the user has scrolled
-
-                        // Switch to 20% transparent white border and stop pulsating effect
-                        header.style.borderBottom = '2px solid rgba(255, 255, 255, 1)';
-                        header.style.boxShadow = 'none'; // Remove the blue glow
-                        header.style.animation = 'none'; // Stop the pulsing animation
-                    }
-                });
-            });
-
-            document.addEventListener('DOMContentLoaded', function () {
                 const text = "Wir bringen Ihre Idee in den App Store - Vom Konzept bis zum Go-Live.";
                 const typingSpeed = 100; // Speed in milliseconds
                 let index = 0;

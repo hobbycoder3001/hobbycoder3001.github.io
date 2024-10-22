@@ -28,23 +28,9 @@ header {
     justify-content: center;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-    border-bottom: 1px solid #00bfff; /* Playful solid bottom border in blue */
-    box-shadow: 0 4px 15px 5px rgba(0, 191, 255, 0.8); /* Radiating glow similar to the content-container */
-    animation: pulseGlowHeader 2s infinite; /* Pulsing glow animation */
+    border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
 
-/* Pulsing glow animation similar to content-container */
-@keyframes pulseGlowHeader {
-    0% {
-        box-shadow: 0 4px 15px 5px rgba(0, 191, 255, 0.8);
-    }
-    50% {
-        box-shadow: 0 4px 25px 10px rgba(0, 191, 255, 0.6);
-    }
-    100% {
-        box-shadow: 0 4px 15px 5px rgba(0, 191, 255, 0.8);
-    }
-}
 
 
 
