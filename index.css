@@ -271,6 +271,18 @@ nav li {
     margin-bottom: 15px;
 }
 
+
+
+.team-member img.team-member-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image circular */
+    margin-bottom: 15px;
+}
+
+
+
 .team-member p:first-of-type {
     margin-bottom: -0.3em; /* Reduziert den Abstand zwischen Business/Tech und dem Text darunter */
 }
@@ -638,4 +650,9 @@ footer {
         padding: 10px 20px; /* Restore regular padding */
         font-size: 1em;
     }
+}
+
+.team-member .linkedin-icon {
+    width: 2em;
+    height: 2em;
 }
