@@ -14,21 +14,38 @@ body {
     padding: 0; /* Add this line */
 }
 
+/* Glowing bottom border for the header, similar to the content-container */
 header {
     position: fixed;
-    height: 84px;
-    width: 100vw; /* Already correct */
     top: 0;
+    left: 0;
+    width: 100%;
+    height: 84px;
+    background-color: rgba(255, 255, 255, 0.5); /* Optional semi-transparent background */
+    backdrop-filter: blur(10px); /* Blurs the background behind the header */
+    z-index: 10; /* Ensure header is on top of everything */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    margin: 0; /* Add this line to ensure no margin */
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-    background-color: WHITE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    border-bottom: 1px solid #00bfff; /* Playful solid bottom border in blue */
+    box-shadow: 0 4px 15px 5px rgba(0, 191, 255, 0.8); /* Radiating glow similar to the content-container */
+    animation: pulseGlowHeader 2s infinite; /* Pulsing glow animation */
 }
+
+/* Pulsing glow animation similar to content-container */
+@keyframes pulseGlowHeader {
+    0% {
+        box-shadow: 0 4px 15px 5px rgba(0, 191, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 4px 25px 10px rgba(0, 191, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 4px 15px 5px rgba(0, 191, 255, 0.8);
+    }
+}
+
 
 
 /* Increase size for h2 and h3 elements */
@@ -120,10 +137,14 @@ nav li {
     vertical-align: middle;    /* Align the logo vertically */
 }
 
+
+/* Hero banner should cover the entire screen and stay fixed */
 .hero-banner {
-    position: relative;
-    margin-top: 84px;
-    height: 500px;
+    position: fixed; /* Fixes the banner to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; /* Full screen height */
     background-image: url("heroPicture3.webp");
     background-size: cover;
     background-position: center;
@@ -133,10 +154,7 @@ nav li {
     flex-direction: column;
     text-align: center;
     color: white;
-    z-index: 1;
-    padding: 0; /* Add this line to remove any padding */
-    margin: 0; /* Add this line to remove any margin */
-    width: 100vw; /* Make sure the hero banner takes full width */
+    z-index: 1; /* Keep it below the header but above initial content */
 }
 
 .hero-banner::after {
@@ -146,54 +164,73 @@ nav li {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.32);  /* Increased to 32% transparency */
-    z-index: -1;
-}
-
-.hero-banner p {
-    font-size: 1.5em;                 /* Subheading size */
-    margin: 0 0 10px 0;
+    background-color: rgba(0, 0, 0, 0.32); /* Dark overlay for text visibility */
+    z-index: -1; /* Ensure the overlay is behind the content */
 }
 
 .hero-banner h1 {
-    font-size: 2.5em;                 /* Main heading size */
+    font-size: 2.5em; /* Main heading size */
     margin: 10px 0;
 }
-
+/* CTA button inside the hero banner */
 .cta-button {
     display: inline-block;
-    background-color: black;         /* Set background to black */
-    color: white;                    /* White text */
-    padding: 15px 30px;              /* Same padding as hero banner */
-    border-radius: 10px;             /* Rounded corners */
-    font-size: 1.3em;                /* Set consistent font size */
-    text-transform: uppercase;       /* Capitalized text */
+    background-color: black;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    text-transform: uppercase;
     cursor: pointer;
     margin-top: 20px;
     text-align: center;
-    /* Remove the individual hover effect and use the shared class */
 }
 
 .cta-button a {
-    color: white;                    /* Ensure the link inside stays white */
-    text-decoration: none;           /* Remove underline from link */
+    color: white; /* Ensure the link inside stays white */
+    text-decoration: none; /* Remove underline from link */
     display: block;
     width: 100%;
     height: 100%;
 }
 
 .cta-button:hover {
-    background-color: #333;          /* This hover effect will now be inherited from the shared class */
+    background-color: #333; /* Darken on hover */
 }
 
+/* Pulsing lightsaber blue glow effect for the top border */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 -4px 15px 5px rgba(0, 191, 255, 0.8);
+    }
+    50% {
+        box-shadow: 0 -4px 25px 10px rgba(0, 191, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 -4px 15px 5px rgba(0, 191, 255, 0.8);
+    }
+}
 
-
-/* New styles to align content under the hero banner */
 .content-container {
-    padding: 0 40px;           /* Matching padding to align with header */
-    max-width: 1200px;         /* Limit the width to avoid excessive stretching */
-    margin: 0 auto;            /* Center the content */
+    position: relative;
+    z-index: 2;
+    margin-top: 99.9vh;
+    width: 100vw;
+    background: linear-gradient(to bottom, hwb(60 93% 4%), #ffffff);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top: 8px solid #00bfff;
+    box-shadow: 0 -4px 15px 5px rgba(0, 191, 255, 0.8);
+    animation: pulseGlow 2s infinite; /* Pulsing glow animation */
 }
+
+/* Add an inner container to manage padding and centering */
+.content-inner {
+    max-width: 1200px; /* Limit width for the content, centered */
+    margin: 0 auto; /* Center content */
+    padding: 0 40px; /* Add padding for spacing on the sides */
+}
+
 
 /* Example styling for sections below the hero banner */
 #services, #team, #portfolio, #kontakt {
@@ -532,9 +569,21 @@ footer {
 
 /* On devices with a minimum width of 768px, show the regular navigation */
 @media (min-width: 768px) {
-    .nav-links {
-        display: flex; /* Display the navigation links */
-    }
+/* Ensure the nav-links are correctly positioned in the header */
+.nav-links {
+    position: relative; /* Remove any absolute positioning if present */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Ensure that the header is correctly positioned and doesn’t interfere with the hero banner */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Ensure the header stays on top */
+}
 
     .nav-links ul {
         display: flex;
@@ -585,35 +634,6 @@ footer {
         transition: all 0.3s ease;
     }
 
-    /* Mobile navigation menu styles */
-    .mobile-nav-links {
-        display: none;
-        flex-direction: column;
-        background-color: white;
-        position: absolute;
-        top: 84px; /* Position it below the header */
-        width: 100%;
-        text-align: center;
-    }
-
-    .mobile-nav-links.active {
-        display: flex; /* Show the mobile menu when burger is clicked */
-    }
-
-    .mobile-nav-links ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .mobile-nav-links ul li {
-        padding: 15px 0;
-    }
-
-    .mobile-nav-links ul li a {
-        text-decoration: none;
-        color: black;
-    }
 }
 
 
