@@ -33,7 +33,8 @@
                 <img class="logo" src="psConsultingLogo.svg" alt="Home">
             </a>
 
-            <nav>
+            <!-- Regular navigation links (hidden on small screens) -->
+            <nav class="nav-links">
                 <ul>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#team">Team</a></li>
@@ -41,8 +42,25 @@
                     <li><a href="#kontakt">Kontakt</a></li>
                 </ul>
             </nav>
+
+            <!-- Burger menu (only shown on small screens) -->
+            <div class="burger-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </div>
     </header>
+
+    <!-- This is the hidden mobile menu that appears when the burger menu is clicked -->
+    <nav class="mobile-nav-links">
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+    </nav>
 
 
     <div class="hero-banner">
@@ -112,7 +130,7 @@
                     <div class="team-member">
                         <h3>Maurice Straube</h3>
                         <img src="samplePerson.webp" alt="Maurice Straube">
-                        <p>- MSc. Information Systems, Fokus Prozesse und Workflows. Verantwortlich für Konzept, Design
+                        <p>MSc. Information Systems, Fokus Prozesse und Workflows. Verantwortlich für Konzept, Design
                             und Data
                             Analytics. Über 5 Jahre Erfahrung als Produktmanager.</p>
                     </div>
@@ -120,7 +138,7 @@
                     <div class="team-member">
                         <h3>Philipp Reiter</h3>
                         <img src="samplePerson.webp" alt="Philipp Reiter">
-                        <p>- MSc. Information Systems, Fokus Software-Entwicklung. Verantwortlich für App und
+                        <p>MSc. Information Systems, Fokus Software-Entwicklung. Verantwortlich für App und
                             Backend-Entwicklung.
                             Über 14 Jahre Erfahrung als Software-Entwickler.</p>
                     </div>
@@ -131,17 +149,17 @@
                 <p>Als Gründer eines Startups haben wir gemeinsam über vier Jahre Erfahrung im Bereich App-Entwicklung
                     gesammelt. Durch unsere komplementären Fähigkeiten und effiziente Arbeitsweise sind wir der perfekte
                     Partner
-                    für Sie, um Ihre App-Idee schnell und präzise umzusetzen.,</p>
+                    für Sie, um Ihre App-Idee schnell und präzise umzusetzen.</p>
             </div>
 
             <div id="portfolio">
                 <h2>Portfolio</h2>
-                <h3>Unlikeany</h3>
+                <h3>UnlikeAny</h3>
                 <p>Seit 2020 haben wir mit UnlikeAny selbständig eine video-basierte App zum Finden von
                     neuen Freunden und Dates entwickelt. Man könnte auch von einer Mischung aus TikTok und Tinder
                     sprechen.
                     Hauptzielgruppe der App ist die Generation Z.</p>
-                <p>Die App hat über 30.000 Downloads erreicht und wurde zwischenzeitlich im App Store als
+                <p>Die App hat über 50.000 Downloads erreicht und wurde zwischenzeitlich im App Store als
                     eine der beliebtesten Apps im Bereich “Dating” hervorgehoben. Aktuell befinden wir uns in Gesprächen
                     mit
                     potentiellen Käufern.</p>
@@ -219,6 +237,14 @@
                 }, { threshold: 0.5 });
 
                 observer.observe(portfolioSection);
+            });
+
+            // Toggle mobile menu visibility on burger menu click
+            const burger = document.querySelector('.burger-menu');
+            const mobileNav = document.querySelector('.mobile-nav-links');
+
+            burger.addEventListener('click', () => {
+                mobileNav.classList.toggle('active');
             });
         </script>
 

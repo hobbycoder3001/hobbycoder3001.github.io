@@ -197,6 +197,7 @@ nav li {
 
 
 /* Style the services section as a visual chain */
+/* Remove the hover effect from .service */
 .service {
     padding: 20px;
     border-left: 4px solid black;  /* Visual chain effect */
@@ -205,10 +206,6 @@ nav li {
     transition: background-color 0.3s ease;
 }
 
-.service:hover {
-    background-color: lightblue;   /* Hover effect for service items */
-    border-left-color: lightblue;  /* Match border color on hover */
-}
 
 .service h3 {
     margin: 0;
@@ -509,6 +506,129 @@ footer {
 }
 
 
+/* Hide the burger menu on larger screens */
+.burger-menu {
+    display: none;
+}
+
+/* On devices with a minimum width of 768px, show the regular navigation */
+@media (min-width: 768px) {
+    .nav-links {
+        display: flex; /* Display the navigation links */
+    }
+
+    .nav-links ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none; /* Remove default list styling */
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links ul li {
+        margin-right: 20px; /* Space between the links */
+    }
+
+    .nav-links ul li a {
+        text-decoration: none;
+        color: black; /* Set the text color */
+        padding: 10px 20px; /* Spacing around the links */
+        transition: color 0.3s ease; /* Smooth transition for hover */
+    }
+
+    .nav-links ul li a:hover {
+        color: #333; /* Change text color on hover */
+    }
+}
+
+/* On smaller devices (below 768px), show the burger menu */
+@media (max-width: 767px) {
+    .nav-links {
+        display: none; /* Hide regular navigation links */
+    }
+
+    .burger-menu {
+        display: flex; /* Show the burger menu */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+        margin-right: 40px;  /* Align with the content-container's padding */
+    }
+
+    .burger-menu div {
+        width: 100%;
+        height: 4px;
+        background-color: black;
+        margin: 4px 0;
+        transition: all 0.3s ease;
+    }
+
+    /* Mobile navigation menu styles */
+    .mobile-nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: white;
+        position: absolute;
+        top: 84px; /* Position it below the header */
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-nav-links.active {
+        display: flex; /* Show the mobile menu when burger is clicked */
+    }
+
+    .mobile-nav-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav-links ul li {
+        padding: 15px 0;
+    }
+
+    .mobile-nav-links ul li a {
+        text-decoration: none;
+        color: black;
+    }
+}
 
 
 
+/* Adjust navigation links to fit on 768px screens */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .nav-links ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-links ul li {
+        flex: 1; /* Make each link take an equal amount of space */
+        text-align: center;
+        margin: 0; /* Remove margin between the links */
+    }
+
+    .nav-links ul li a {
+        padding: 10px 10px; /* Reduce padding to prevent overflow */
+        font-size: 0.9em; /* Slightly reduce font size to make it fit */
+    }
+}
+
+/* On larger screens (above 1024px), return to normal spacing */
+@media (min-width: 1025px) {
+    .nav-links ul li {
+        margin-right: 20px; /* Space between links on larger screens */
+    }
+
+    .nav-links ul li a {
+        padding: 10px 20px; /* Restore regular padding */
+        font-size: 1em;
+    }
+}
